@@ -35,6 +35,8 @@ export default function AppTabs() {
 
 export function TabButton({ children, isFocused, ...props }: TabTriggerSlotProps) {
   return (
+    // @ts-expect-error Tipos de ref incompatibles entre expo-router y react-native 0.88 (plantilla de Expo)
+
     <Pressable {...props} style={({ pressed }) => pressed && styles.pressed}>
       <ThemedView
         type={isFocused ? 'backgroundSelected' : 'backgroundElement'}
